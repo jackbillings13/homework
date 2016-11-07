@@ -10,6 +10,14 @@
 # 1) Print the orginal text (150 tokens)
 # 1) Print the new text
 print("START*******")
+import nltk
+nltk.download()
+from nltk.tokenize import sent_tokenize, word_tokenize
+text = "Hello students, how are you doing today? Have you recovered from the exam?  I hope you are feeling better.  Things will be fine."
 
+print(sent_tokenize(text)) 
+print(word_tokenize(text)) 
+for i in word_tokenize(text):
+	print(i)
 
 print("\n\nEND*******")
