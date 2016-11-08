@@ -15,11 +15,19 @@ auth.set_access_token("277831482-xECfpYtnXu2ynTY4CLHDg81UDVIyaYKvmM3oZkEc", "HV4
 
 api = tweepy.API(auth)
 public_tweets = api.search('UMSI')
+subjectivity = 0
+polarity = 0
+count = 0
 
 for tweet in public_tweets:
-	# print(tweet.text)
+	print(tweet.text)
 	analysis = TextBlob(tweet.text)
-	print(analysis.sentiment)
+	subjectivity += analysis.sentiment.subjectivity
+	polarity += analysis.sentiment.polarity
+	count += 1
 
-print("Average subjectivity is")
-print("Average polarity is")
+avg_subjectivity = subjectivity / count	
+avg_polarity = polarity / count
+
+print("Average subjectivity is " + str(avg_subjectivity))
+print("Average polarity is " + str(avg_polarity))
