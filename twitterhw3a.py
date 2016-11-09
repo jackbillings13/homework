@@ -13,4 +13,5 @@ auth.set_access_token("277831482-xECfpYtnXu2ynTY4CLHDg81UDVIyaYKvmM3oZkEc", "HV4
 
 api = tweepy.API(auth)
 
+# sends the tweet
 api.update_with_media('homework3.jpg', '#UMSI-206 #Proj3')
