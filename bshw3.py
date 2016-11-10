@@ -16,4 +16,5 @@ from bs4 import BeautifulSoup
 #using beautifulsoup to get the HTML of the webpage
 base_url = 'http://collemc.people.si.umich.edu/data/bshw3StarterFile.html'
 r = requests.get(base_url)
+# gets the html
 soup = BeautifulSoup(r.text)
