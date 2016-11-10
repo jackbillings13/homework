@@ -9,15 +9,10 @@
 # Deliverables:
 # 1) Print the orginal text (150 tokens)
 # 1) Print the new text
-print("START*******")
-import nltk
-nltk.download()
-from nltk.tokenize import sent_tokenize, word_tokenize
-text = "Hello students, how are you doing today? Have you recovered from the exam?  I hope you are feeling better.  Things will be fine."
+import nltk 
+import random
 
-print(sent_tokenize(text)) 
-print(word_tokenize(text)) 
-for i in word_tokenize(text):
-	print(i)
+# import nltk
+nltk.download('punkt')
 
-print("\n\nEND*******")
+from nltk import word_tokenize,sent_tokenize
