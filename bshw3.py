@@ -25,7 +25,7 @@ for word in soup.find_all(class_="field field-name-body field-type-text-with-sum
 		word.text.replace("student", "AMAZING student")
 	print(word)
 
-
+# find the image
 for image in soup.find_all("img"):
 	if image.get('src') == "https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg":
 		image.replace(image.get('src'), "IMG_9268.JPG")
