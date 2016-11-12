@@ -4,13 +4,13 @@
 
 # You will demo this live for grading.
 
-print("""No output necessary although you 
-	can print out a success/failure message if you want to.""")
 import tweepy
 
+# tokens needed to access twitter
 auth = tweepy.OAuthHandler("gvCmOm8i5osgs3pG1dcQD0sFT", "rVIj4n0UBqzWg7HwfmYhNZpcCKGpTbFJletZTIZFXxqy2jJhav")
 auth.set_access_token("277831482-xECfpYtnXu2ynTY4CLHDg81UDVIyaYKvmM3oZkEc", "HV4xPevmVgMOthRPLDEeLSfyTmCgSucaPyH1TYKdZaEPb")
 
+# connects to twitter api
 api = tweepy.API(auth)
 
 # sends the tweet

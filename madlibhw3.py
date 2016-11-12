@@ -11,32 +11,16 @@
 # 1) Print the new text
 import nltk 
 import random
-
-# # import nltk
-# nltk.download('punkt')
 from nltk.book import text2
-
 from nltk import word_tokenize,sent_tokenize
 
-debug = True
-# print(text2)
-# # get file from user to make mad lib out of
-# fname = text2 # need a file with this name in directory
-
-# f = open(fname, 'r')
-# para = text2.read()
-
+# gets first 150 words
 tokens = text2[:150]
+# prints first 150 words
 print (" ".join(tokens))
-# print("TOKENS")
-# print(tokens)
-tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
-# print("TAGGED TOKENS")
-# print(tagged_tokens)
-# if debug:
-# 	print ("First few tagged tokens are:")
-# 	for tup in tagged_tokens[:5]:
-# 		print (tup)
+
+# gives us a tagged list of tuples
+tagged_tokens = nltk.pos_tag(tokens) 
 
 tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective","RB":"an adverb"}
 substitution_probabilities = {"NN":.15,"NNS":.1,"VB":.1,"JJ":.1,"RB":.1}
@@ -48,12 +32,12 @@ def spaced(word):
 		return " " + word
 
 final_words = []
-
-
+# creates the madlib
 for (word, tag) in tagged_tokens:
 	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
 		final_words.append(spaced(word))
 	else:
+		# asks user to input a word
 		new_word = input("Please enter %s:\n" % (tagmap[tag]))
 		final_words.append(spaced(new_word))
 
